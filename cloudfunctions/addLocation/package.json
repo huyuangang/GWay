@@ -1,0 +1,14 @@
+{
+  "name": "addLocation",
+  "version": "1.0.0",
+  "description": "进入小程序时添加当前用户位置",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

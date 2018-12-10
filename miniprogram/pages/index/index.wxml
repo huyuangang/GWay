@@ -1,0 +1,6 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="main">
+  <view class="point-item"
+        wx:for="{{points}}"
+        style="left:{{item.left}}px;top:{{item.top}}px;background:{{item.color}};width:{{item.width}}rpx;height:{{item.width}}rpx;"></view>
+</view>

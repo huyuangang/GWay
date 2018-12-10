@@ -1,0 +1,14 @@
+/* miniprogram/pages/index/index.wxss */
+
+.main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #0c0e22;
+}
+.point-item {
+  position: absolute;
+  border-radius: 100%;
+}
