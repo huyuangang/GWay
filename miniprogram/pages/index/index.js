@@ -92,36 +92,31 @@ Page({
     let openid = app.globalData.openid;
     let locations = this.data.locations;
     let myLocation = locations.find(item => item.openid === openid);
-    console.log(myLocation)
 
     locations = locations.map(item => {
-      item = calc(item, myLocation);
+      isMe = item === myLocation;
+      item = calc(item, isMe);
       return item;
     })
     this.setData({
       points: locations
     })
-    function calc(other, my) {
+    function calc(pos, isMe) {
       let { windowWidth, windowHeight } = app.globalData.system;
+      let { lng, lat } = locations;
 
-      if (other.lng === my.lng && other.lat === my.lat) {
-        return {
-          left: (windowWidth - MY_WIDTH) / 2,
-          top: (windowHeight - MY_WIDTH) / 2,
-          color: MY_COLOR,
-          width: MY_WIDTH
-        }
-      } else {
-        let disX = other.lng - my.lng, disY = other.lat - my.lat;
-        disX = windowWidth * disX / 360;
-        disY = windowHeight * disY / 360;
-        return {
-          left: (windowWidth - MY_WIDTH) / 2 + disX,
-          top: (windowHeight - MY_WIDTH) / 2 + disY,
-          color: OTHER_COLOR,
-          width: OTHER_WIDTH
-        }
+      let retoPos = {
+        left: (180 + lng) / 360 * windowWidth,
+        top: (180 - lat) / 360 * windowHeight,
+        color: OTHER_COLOR,
+        width: OTHER_WIDTH
       }
+      if (isMe) {
+        retoPos.color = MY_COLOR;
+        retoPos.width = MY_WIDTH;
+      }
+
+      return retoPos;
     }
   }
 
