@@ -1,0 +1,4 @@
+<view class='container'>
+  <image class='add-img' src='{{imgSrc}}'></image>
+  <canvas canvas-id="star"></canvas>
+</view>

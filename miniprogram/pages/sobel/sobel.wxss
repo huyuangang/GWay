@@ -1,0 +1,15 @@
+/* miniprogram/pages/sobel/sobel.wxss */
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #0c0e22;
+}
+.add-img {
+  margin-top: 360rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
